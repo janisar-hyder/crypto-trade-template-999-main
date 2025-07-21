@@ -143,7 +143,7 @@ const Withdraw = () => {
         setWithdrawAmount("");
       }
     }}
-    className="border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+    className="bg-background/90 hover:bg-background focus:bg-background focus:ring-0 focus:ring-offset-0 focus:border-0 border-border/99"
     min="0"
     max={availableBalance}
   />
@@ -156,7 +156,7 @@ const Withdraw = () => {
               <div>
   <Label htmlFor="method">Withdrawal Method</Label>
   <Select value={selectedMethod} onValueChange={setSelectedMethod}>
-    <SelectTrigger className="border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+    <SelectTrigger className="bg-background/90 hover:bg-background focus:bg-background focus:ring-0 focus:ring-offset-0 focus:border-0 border-border/99">
       <SelectValue placeholder="Select payment method" />
     </SelectTrigger>
     <SelectContent>
@@ -194,7 +194,7 @@ const Withdraw = () => {
                 <Input
                   id="address"
                   placeholder="Enter wallet address or account details"
-                  className="border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+                  className="bg-background/90 hover:bg-background focus:bg-background focus:ring-0 focus:ring-offset-0 focus:border-0 border-border/99"
                 />
               </div>
             </div>

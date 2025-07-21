@@ -85,39 +85,18 @@ const DashboardTopBar = ({ onMenuClick }: DashboardTopBarProps) => {
           <Menu className="h-5 w-5" />
         </Button>
 
-        {/* Referred Counter */}
-        <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-primary/10 border border-primary/20 rounded-full backdrop-blur-sm">
-          <Users className="h-4 w-4 text-primary" />
-          <span className="text-sm text-muted-foreground">Referred:</span>
-          <Badge variant="secondary" className="bg-primary/20 text-primary border-primary/30">{referralCount}</Badge>
-        </div>
+
       </div>
 
       {/* Center/Right side - User info */}
       <div className="flex items-center space-x-4 ml-auto">
         {/* Copy Referral Link */}
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={handleCopyReferralLink}
-          className="flex items-center space-x-2 bg-card/50 border-border hover:bg-accent backdrop-blur-sm rounded-xl"
-        >
-          <Copy className="h-4 w-4" />
-          <span className="hidden sm:inline">Copy Referral Link</span>
-        </Button>
 
-        {/* Account Status */}
-        <div className="flex items-center space-x-2 px-3 py-1.5 bg-green-500/10 border border-green-500/20 rounded-full backdrop-blur-sm">
-          <div className={cn("w-2 h-2 rounded-full animate-pulse", getStatusColor(accountStatus))} />
-          <span className="text-sm font-medium text-green-600 dark:text-green-400">{accountStatus}</span>
-          {accountStatus === "Verified" && <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />}
-        </div>
+
+
 
         {/* Total Balance */}
-        <div className="text-right px-3 py-1.5 bg-primary/10 border border-primary/20 rounded-full backdrop-blur-sm">
-          <div className="text-xs text-muted-foreground">Total Balance</div>
-          <div className="text-sm font-bold text-primary">{totalBalance}</div>
-        </div>
+
 
         {/* Profile Avatar with Dropdown */}
         <DropdownMenu>

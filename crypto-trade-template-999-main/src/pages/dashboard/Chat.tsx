@@ -156,9 +156,9 @@ const Chat = () => {
             {/* Message Input */}
             <div className="border-t p-4">
               <div className="flex items-center gap-2">
-                <Button variant="outline" size="icon">
+                {/* <Button variant="outline" size="icon">
                   <Paperclip className="w-4 h-4" />
-                </Button>
+                </Button> */}
                 <Input
                   value={newMessage}
                   onChange={(e) => setNewMessage(e.target.value)}
