@@ -28,7 +28,7 @@ const DashboardSidebar = ({ isOpen, onClose }: DashboardSidebarProps) => {
   const menuItems = [
     { icon: LayoutDashboard, label: "Overview", path: "/dashboard" },
     { icon: TrendingUp, label: "My Investments", path: "/dashboard/investments" },
-    { icon: Gift, label: "Rewards", path: "/dashboard/rewards" },
+    // { icon: Gift, label: "Rewards", path: "/dashboard/rewards" },
     { icon: Users, label: "Referrals", path: "/dashboard/referrals" },
     { icon: CreditCard, label: "Withdraw", path: "/dashboard/withdraw" },
     { icon: ShieldCheck, label: "KYC Verification", path: "/dashboard/kyc" },

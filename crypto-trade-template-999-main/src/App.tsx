@@ -14,7 +14,7 @@ import Dashboard from "./pages/Dashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import DashboardOverview from "./pages/dashboard/DashboardOverview";
 import Investments from "./pages/dashboard/Investments";
-import Rewards from "./pages/dashboard/Rewards";
+// import Rewards from "./pages/dashboard/Rewards";
 import Referrals from "./pages/dashboard/Referrals";
 import Withdraw from "./pages/dashboard/Withdraw";
 import Settings from "./pages/dashboard/Settings";
@@ -42,7 +42,7 @@ const App = () => (
             <Route path="/dashboard" element={<Dashboard />}>
               <Route index element={<DashboardOverview />} />
               <Route path="investments" element={<Investments />} />
-              <Route path="rewards" element={<Rewards />} />
+              {/* <Route path="rewards" element={<Rewards />} /> */}
               <Route path="referrals" element={<Referrals />} />
               <Route path="withdraw" element={<Withdraw />} />
               <Route path="kyc" element={<KYCVerification />} />
