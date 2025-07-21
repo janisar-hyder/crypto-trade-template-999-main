@@ -89,13 +89,7 @@ const AdminSidebar = ({ isOpen, onClose }: AdminSidebarProps) => {
           })}
         </nav>
 
-        {/* Theme Toggle */}
-        <div className="px-6 py-4 border-t border-white/10">
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-gray-400 font-medium">Theme</span>
-            <ThemeToggle />
-          </div>
-        </div>
+
 
         {/* Logout */}
         <div className="px-6 py-4 border-t border-white/10">
