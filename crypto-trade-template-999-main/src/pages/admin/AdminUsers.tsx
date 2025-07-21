@@ -84,8 +84,29 @@ const AdminUsers = () => {
 
   return (
     <div className="space-y-6 p-4 sm:p-6">
-      {/* Header and Search - unchanged from previous version */}
-      {/* ... */}
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <h1 className="text-xl sm:text-2xl font-bold text-foreground">User Management</h1>
+          <p className="text-sm sm:text-base text-muted-foreground">Manage and monitor all users</p>
+        </div>
+        <div className="flex gap-2 w-full sm:w-auto">
+          <Button variant="outline" className="w-full sm:w-auto">
+            <Download className="h-4 w-4 mr-2" />
+            <span className="hidden sm:inline">Export</span>
+          </Button>
+        </div>
+      </div>
+
+      {/* Search Bar */}
+      <div className="relative w-full max-w-md">
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+        <Input
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search users by name or email..."
+          className="pl-10 w-full"
+        />
+      </div>
 
       {/* Desktop Table */}
       <Card className="hidden sm:block">
