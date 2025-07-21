@@ -39,34 +39,34 @@ const HeroSection = () => {
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background/95 to-background pt-20 md:pt-0">
       {/* Subtle Background Effects */}
       <div className="absolute inset-0 opacity-30">
-        <motion.div 
+        <motion.div
           className="absolute top-20 left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl"
-          animate={{ 
+          animate={{
             scale: [1, 1.2, 1],
             opacity: [0.1, 0.3, 0.1],
           }}
-          transition={{ 
-            duration: 8, 
+          transition={{
+            duration: 8,
             repeat: Infinity,
-            ease: "easeInOut" 
+            ease: "easeInOut"
           }}
         />
-        <motion.div 
+        <motion.div
           className="absolute bottom-20 right-20 w-64 h-64 bg-primary/8 rounded-full blur-2xl"
-          animate={{ 
+          animate={{
             scale: [1, 1.3, 1],
             opacity: [0.1, 0.2, 0.1],
           }}
-          transition={{ 
-            duration: 12, 
+          transition={{
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 2 
+            delay: 2
           }}
         />
 
         {/* Subtle grid pattern */}
-        <div 
+        <div
           className="absolute inset-0 opacity-[0.01]"
           style={{
             backgroundImage: `
@@ -141,7 +141,7 @@ const HeroSection = () => {
                 className="inline-flex items-center gap-2 mb-4 sm:mb-6 px-3 py-1.5 rounded-full glass border border-primary/20 hover:border-primary/40 transition-all duration-300"
               >
                 <Sparkles className="w-3 h-3 text-primary flex-shrink-0" />
-                <span className="text-xs font-medium text-primary">The Future of Crypto Investment</span>
+                <span className="text-xs font-medium text-primary">The Future of Gold Investment</span>
               </motion.div>
 
               {/* Main Heading */}
@@ -161,19 +161,19 @@ const HeroSection = () => {
                     transition={{ duration: 0.8, delay: 0.7 }}
                     className="block bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent"
                   >
-                    Crypto Wealth
+                    Gold Wealth
                   </motion.div>
                 </motion.h1>
               </div>
 
               {/* Subtitle */}
-              <motion.p 
+              <motion.p
                 variants={itemVariants}
                 className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-6 sm:mb-8 text-center lg:text-left"
               >
                 Join thousands of smart investors earning{" "}
                 <span className="text-primary font-semibold">guaranteed monthly returns</span>{" "}
-                with our secure, regulated crypto investment platform.
+                with our secure, regulated Gold investment platform.
               </motion.p>
             </motion.div>
 
@@ -195,7 +195,7 @@ const HeroSection = () => {
                   </Link>
                 </Button>
               </motion.div>
-              
+
               <motion.div
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -232,137 +232,132 @@ const HeroSection = () => {
             </motion.div>
           </motion.div>
 
-          {/* Enhanced 3D Visualization */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="hidden lg:flex items-center justify-center relative"
-          >
-            <div className="relative w-[500px] h-[500px]">
-              {/* Central crypto sphere with enhanced design */}
-              <motion.div
-                // animate={{ 
-                //   rotateY: [0, 360],
-                // }}
-                // transition={{ 
-                //   duration: 20, 
-                //   repeat: Infinity,
-                //   ease: "linear" 
-                // }}
-                className="absolute inset-0 flex items-center justify-center"
-              >
-                <div className="relative">
-                  <div className="w-40 h-40 rounded-full bg-gradient-to-br from-primary/30 to-primary/60 backdrop-blur-xl border border-primary/40 flex items-center justify-center shadow-2xl shadow-primary/25">
-                    <Bitcoin className="w-20 h-20 text-primary drop-shadow-lg" />
-                  </div>
-                  {/* Pulsing rings around central sphere */}
-                  <div className="absolute inset-0 rounded-full border border-primary/20 animate-ping"></div>
-                  <div className="absolute inset-[-10px] rounded-full border border-primary/10 animate-ping" style={{ animationDelay: '1s' }}></div>
-                </div>
-              </motion.div>
+         {/* Green Investment Visualization */}
+<motion.div
+  initial={{ opacity: 0, scale: 0.8 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1, delay: 0.5 }}
+  className="hidden lg:flex items-center justify-center relative"
+>
+  <div className="relative w-[500px] h-[500px]">
+    {/* Central investment element with green design */}
+    <motion.div
+      className="absolute inset-0 flex items-center justify-center"
+    >
+      <div className="relative">
+        <div className="w-32 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-md shadow-2xl shadow-green-500/30 flex items-center justify-center border border-green-300/40">
+          <div className="text-4xl font-bold text-green-100 drop-shadow-lg">₲</div>
+        </div>
+        {/* Pulsing glow around central element */}
+        <div className="absolute inset-0 rounded-md border border-green-400/30 animate-ping"></div>
+        <div className="absolute inset-[-10px] rounded-md border border-green-300/20 animate-ping" style={{ animationDelay: '1s' }}></div>
+      </div>
+    </motion.div>
 
-              {/* Enhanced orbiting elements with more variety */}
-              {[
-                { icon: DollarSign, delay: 0, radius: 140, duration: 15, color: "from-green-400/20 to-green-600/40" },
-                { icon: BarChart3, delay: 5, radius: 180, duration: 18, color: "from-blue-400/20 to-blue-600/40" },
-                { icon: TrendingUp, delay: 10, radius: 110, duration: 12, color: "from-purple-400/20 to-purple-600/40" },
-                { icon: Zap, delay: 3, radius: 160, duration: 16, color: "from-yellow-400/20 to-yellow-600/40" },
-                { icon: Target, delay: 8, radius: 200, duration: 22, color: "from-red-400/20 to-red-600/40" },
-                { icon: Globe, delay: 12, radius: 120, duration: 14, color: "from-teal-400/20 to-teal-600/40" }
-              ].map((orbit, index) => (
-                <motion.div
-                  key={index}
-                  className="absolute inset-0 flex items-center justify-center"
-                  animate={{ rotate: [0, 360] }}
-                  transition={{
-                    duration: orbit.duration,
-                    repeat: Infinity,
-                    ease: "linear",
-                    delay: orbit.delay,
-                  }}
-                >
-                  <motion.div
-                    className={`absolute w-16 h-16 rounded-full bg-gradient-to-br ${orbit.color} backdrop-blur-xl border border-white/20 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300`}
-                    style={{
-                      transform: `translateX(${orbit.radius}px)`,
-                    }}
-                    whileHover={{ scale: 1.3, rotateZ: 360 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <orbit.icon className="w-8 h-8 text-white drop-shadow-md" />
-                  </motion.div>
-                </motion.div>
-              ))}
+    {/* Orbiting investment elements */}
+    {[
+      { icon: "₲", delay: 0, radius: 140, duration: 15, color: "from-green-400/20 to-green-600/40" },
+      { icon: BarChart3, delay: 5, radius: 180, duration: 18, color: "from-green-300/20 to-green-500/40" },
+      { icon: "₲", delay: 10, radius: 110, duration: 12, color: "from-green-500/20 to-green-700/40" },
+      { icon: TrendingUp, delay: 3, radius: 160, duration: 16, color: "from-green-200/20 to-green-400/40" },
+      { icon: "₲", delay: 8, radius: 200, duration: 22, color: "from-green-600/20 to-green-800/40" },
+      { icon: Shield, delay: 12, radius: 120, duration: 14, color: "from-green-400/20 to-green-600/40" }
+    ].map((orbit, index) => (
+      <motion.div
+        key={index}
+        className="absolute inset-0 flex items-center justify-center"
+        animate={{ rotate: [0, 360] }}
+        transition={{
+          duration: orbit.duration,
+          repeat: Infinity,
+          ease: "linear",
+          delay: orbit.delay,
+        }}
+      >
+        <motion.div
+          className={`absolute w-16 h-16 rounded-full bg-gradient-to-br ${orbit.color} backdrop-blur-xl border border-green-400/30 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300`}
+          style={{
+            transform: `translateX(${orbit.radius}px)`,
+          }}
+          whileHover={{ scale: 1.3, rotateZ: 360 }}
+          transition={{ duration: 0.3 }}
+        >
+          {typeof orbit.icon === 'string' ? (
+            <div className="text-2xl font-bold text-green-100">{orbit.icon}</div>
+          ) : (
+            <orbit.icon className="w-8 h-8 text-green-100 drop-shadow-md" />
+          )}
+        </motion.div>
+      </motion.div>
+    ))}
 
-              {/* Enhanced floating data points with different sizes */}
-              {[...Array(12)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className={`absolute bg-primary/40 rounded-full ${i % 3 === 0 ? 'w-3 h-3' : i % 3 === 1 ? 'w-2 h-2' : 'w-1 h-1'}`}
-                  style={{
-                    left: `${15 + Math.random() * 70}%`,
-                    top: `${15 + Math.random() * 70}%`,
-                  }}
-                  animate={{
-                    y: [-15, 15, -15],
-                    opacity: [0.2, 0.8, 0.2],
-                    scale: [0.8, 1.2, 0.8],
-                  }}
-                  transition={{
-                    duration: 4 + Math.random() * 3,
-                    repeat: Infinity,
-                    delay: i * 0.3,
-                  }}
-                />
-              ))}
+    {/* Particle effects */}
+    {[...Array(12)].map((_, i) => (
+      <motion.div
+        key={i}
+        className={`absolute bg-green-400/40 rounded-full ${i % 3 === 0 ? 'w-3 h-3' : i % 3 === 1 ? 'w-2 h-2' : 'w-1 h-1'}`}
+        style={{
+          left: `${15 + Math.random() * 70}%`,
+          top: `${15 + Math.random() * 70}%`,
+        }}
+        animate={{
+          y: [-15, 15, -15],
+          opacity: [0.2, 0.8, 0.2],
+          scale: [0.8, 1.2, 0.8],
+        }}
+        transition={{
+          duration: 4 + Math.random() * 3,
+          repeat: Infinity,
+          delay: i * 0.3,
+        }}
+      />
+    ))}
 
-              {/* Enhanced connection lines with gradients */}
-              <svg
-                className="absolute inset-0 w-full h-full pointer-events-none"
-                viewBox="0 0 500 500"
-              >
-                <defs>
-                  <linearGradient id="connectionGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.4" />
-                    <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.2" />
-                    <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
-                  </linearGradient>
-                  <linearGradient id="connectionGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="hsl(var(--primary) / 0.6)" stopOpacity="0.3" />
-                    <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-                {[...Array(8)].map((_, i) => (
-                  <motion.line
-                    key={i}
-                    x1={250}
-                    y1={250}
-                    x2={100 + Math.random() * 300}
-                    y2={100 + Math.random() * 300}
-                    stroke={i % 2 === 0 ? "url(#connectionGradient1)" : "url(#connectionGradient2)"}
-                    strokeWidth={Math.random() * 2 + 0.5}
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    animate={{ 
-                      pathLength: [0, 1, 0], 
-                      opacity: [0, 0.6, 0] 
-                    }}
-                    transition={{
-                      duration: 5 + Math.random() * 3,
-                      repeat: Infinity,
-                      delay: i * 0.8,
-                    }}
-                  />
-                ))}
-              </svg>
+    {/* Green-themed connection lines */}
+    <svg
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      viewBox="0 0 500 500"
+    >
+      <defs>
+        <linearGradient id="greenGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#4ade80" stopOpacity="0.4" />
+          <stop offset="50%" stopColor="#4ade80" stopOpacity="0.2" />
+          <stop offset="100%" stopColor="#4ade80" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient id="greenGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#4ade80" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#4ade80" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      {[...Array(8)].map((_, i) => (
+        <motion.line
+          key={i}
+          x1={250}
+          y1={250}
+          x2={100 + Math.random() * 300}
+          y2={100 + Math.random() * 300}
+          stroke={i % 2 === 0 ? "url(#greenGradient1)" : "url(#greenGradient2)"}
+          strokeWidth={Math.random() * 2 + 0.5}
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ 
+            pathLength: [0, 1, 0], 
+            opacity: [0, 0.6, 0] 
+          }}
+          transition={{
+            duration: 5 + Math.random() * 3,
+            repeat: Infinity,
+            delay: i * 0.8,
+          }}
+        />
+      ))}
+    </svg>
 
-              {/* Ambient glow effect */}
-              <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent rounded-full blur-3xl"></div>
-            </div>
-          </motion.div>
+    {/* Ambient glow effect */}
+    <div className="absolute inset-0 bg-gradient-radial from-green-500/10 via-transparent to-transparent rounded-full blur-3xl"></div>
+  </div>
+</motion.div>
         </div>
       </div>
-
       {/* Minimal Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}

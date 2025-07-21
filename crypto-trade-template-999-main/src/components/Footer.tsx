@@ -12,10 +12,10 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <TrendingUp className="w-5 h-5 text-primary" />
-                <span className="font-bold text-lg">CryptoInvest</span>
+                <span className="font-bold text-lg">GoldInvest</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Your trusted platform for crypto investments with guaranteed monthly returns and secure transactions.
+                Your trusted platform for Gold investments with guaranteed monthly returns and secure transactions.
               </p>
               <div className="flex space-x-4">
                 <Button variant="ghost" size="icon">
@@ -65,7 +65,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:support@cryptoinvest.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href="mailto:support@Goldinvest.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     Contact Support
                   </a>
                 </li>
@@ -97,7 +97,7 @@ const Footer = () => {
           <div className="mt-8 pt-8 border-t border-white/10">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-sm text-muted-foreground text-center md:text-left">
-                © {new Date().getFullYear()} CryptoInvest. All rights reserved.
+                © {new Date().getFullYear()} GoldInvest. All rights reserved.
               </p>
               <div className="flex items-center gap-4">
                 <span className="text-sm text-muted-foreground">

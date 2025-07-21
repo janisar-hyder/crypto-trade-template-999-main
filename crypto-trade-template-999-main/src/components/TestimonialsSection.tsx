@@ -16,31 +16,31 @@ const testimonials = [
   },
   {
     name: "Sarah Johnson",
-    role: "Crypto Fund Manager",
+    role: "Gold Fund Manager",
     image: "https://avatars.githubusercontent.com/u/2345678?v=4",
     content:
-      "CryptoTrade's institutional-grade tools have transformed our trading strategy. The API integration and automated features have saved us countless hours.",
+      "GoldTrade's institutional-grade tools have transformed our trading strategy. The API integration and automated features have saved us countless hours.",
   },
   {
     name: "David Wilson",
-    role: "Early Crypto Investor",
+    role: "Early Gold Investor",
     image: "https://avatars.githubusercontent.com/u/3456789?v=4",
     content:
-      "The customer support is exceptional, and the platform's intuitive design made getting started with crypto trading seamless. A game-changer for both beginners and pros.",
+      "The customer support is exceptional, and the platform's intuitive design made getting started with Gold trading seamless. A game-changer for both beginners and pros.",
   },
   {
     name: "Emily Zhang",
     role: "DeFi Developer",
     image: "https://avatars.githubusercontent.com/u/4567890?v=4",
     content:
-      "We've seen remarkable improvements in our trading efficiency since switching to CryptoTrade. The smart order routing and liquidity aggregation are particularly impressive.",
+      "We've seen remarkable improvements in our trading efficiency since switching to GoldTrade. The smart order routing and liquidity aggregation are particularly impressive.",
   },
   {
     name: "James Rodriguez",
-    role: "Crypto Security Expert",
+    role: "Gold Security Expert",
     image: "https://avatars.githubusercontent.com/u/5678901?v=4",
     content:
-      "The security features are robust and the regular updates keep us ahead of emerging threats. It's exactly what the crypto industry needed.",
+      "The security features are robust and the regular updates keep us ahead of emerging threats. It's exactly what the Gold industry needed.",
   },
   {
     name: "Lisa Thompson",

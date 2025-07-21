@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,26 +7,80 @@ import { Link } from "react-router-dom";
 
 const faqs = [
   {
-    question: "How does the 5% monthly ROI work?",
-    answer: "Our platform generates returns through strategic crypto trading and DeFi protocols. The 5% monthly ROI is calculated on your total investment and paid out monthly to your wallet."
+    question: "What is this investment platform about?",
+    answer: "We offer a professional investment opportunity in the gold trading market through a structured, fixed-tenure program that provides monthly profit returns. Our platform is designed for investors seeking stable income without managing trades themselves.",
+    type: "text"
   },
   {
-    question: "What is the minimum investment amount?",
-    answer: "The minimum investment starts at $100 for our Starter Plan. You can choose from three different plans based on your investment capacity and risk tolerance."
+    question: "How much profit can I earn each month?",
+    type: "table",
+    data: {
+      headers: ["Investment Amount", "Monthly Profit", "Investment Tenure"],
+      rows: [
+        ["$50 – $500", "4% – 4.5%", "6 months"],
+        ["$501 – $5,000", "4.8% – 5.2%", "6 months"],
+        ["$5,001 – $50,000", "5% – 5.5%", "9 months"]
+      ],
+      notes: [
+        "Profits are credited between the 10th–15th of each month",
+        "Percentages indicate the monthly return on your investment",
+        "Higher investment amounts unlock better profit rates"
+      ]
+    }
   },
   {
-    question: "How secure are my investments?",
-    answer: "We use bank-level security with multi-signature wallets, cold storage, and comprehensive KYC verification. Your funds are protected by advanced blockchain security protocols."
+    question: "Can I withdraw my original investment anytime?",
+    answer: "The original investment is locked for the selected tenure. However, early withdrawal is available with the following conditions:\n\n• 10% early exit fee on the invested amount\n\n• 30–45 business days for processing\n\n• Deductions for payment gateway and administrative services will apply",
+    type: "text"
   },
   {
-    question: "When can I withdraw my funds?",
-    answer: "You can withdraw your funds anytime after completing KYC verification. Withdrawals are processed within 24-48 hours during business days."
+    question: "Is my investment safe?",
+    answer: "We follow a zero-risk investment strategy. With over 17 years of trading experience, we have developed a deep understanding of market conditions, allowing us to minimize risk and protect investor capital. We do not speculate—we invest with precision and purpose.",
+    type: "text"
   },
   {
-    question: "How does the referral program work?",
-    answer: "Earn 5% bonus on every friend's investment. Share your unique referral link, and when someone invests using your link, you receive 5% of their investment amount as a bonus."
+    question: "How do I deposit funds?",
+    answer: "Deposits can be made through:\n\n• Crypto wallets (USDT, BTC, ETH, etc.)\n\n• Secure third-party payment gateways (coming soon)\n\nEach transaction is encrypted and securely processed.",
+    type: "text"
   }
 ];
+
+const ProfitTable = ({ data }) => {
+  return (
+    <div className="space-y-4">
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse">
+          <thead>
+            <tr className="bg-white/5">
+              {data.headers.map((header, index) => (
+                <th key={index} className="p-3 text-left border border-white/10">
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {data.rows.map((row, rowIndex) => (
+              <tr key={rowIndex} className="hover:bg-white/5 transition-colors">
+                {row.map((cell, cellIndex) => (
+                  <td key={cellIndex} className="p-3 border border-white/10">
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      
+      <ul className="space-y-2 text-sm text-gray-400 pl-4">
+        {data.notes.map((note, index) => (
+          <li key={index} className="list-disc">{note}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 const FAQPreview = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -86,11 +139,15 @@ const FAQPreview = () => {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="px-6 pb-6"
+                      className="px-6 pb-6 overflow-hidden"
                     >
-                      <p className="text-gray-400 leading-relaxed">
-                        {faq.answer}
-                      </p>
+                      {faq.type === 'table' ? (
+                        <ProfitTable data={faq.data} />
+                      ) : (
+                        <p className="text-gray-400 leading-relaxed whitespace-pre-line">
+                          {faq.answer}
+                        </p>
+                      )}
                     </motion.div>
                   )}
                 </CardContent>

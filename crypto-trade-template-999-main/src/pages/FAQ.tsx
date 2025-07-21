@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ChevronDown, ArrowLeft, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,19 +8,15 @@ import Navigation from "@/components/Navigation";
 
 const faqCategories = [
   {
-    category: "Getting Started",
+    category: "Platform Overview",
     faqs: [
       {
-        question: "How do I create an account?",
-        answer: "Click on 'Get Started' button, fill in your personal information, verify your email, and complete the KYC process. The entire process takes about 5-10 minutes."
+        question: "What is this investment platform about?",
+        answer: "We offer a professional investment opportunity in the gold trading market through a structured, fixed-tenure program that provides monthly profit returns. Our platform is designed for investors seeking stable income without managing trades themselves."
       },
       {
-        question: "What documents do I need for verification?",
-        answer: "You'll need a government-issued ID (passport, driver's license, or national ID card) and a proof of address (utility bill or bank statement) not older than 3 months."
-      },
-      {
-        question: "How long does account verification take?",
-        answer: "Account verification typically takes 24-48 hours. You'll receive an email notification once your account is approved and ready for investment."
+        question: "What makes this platform unique?",
+        answer: "We follow a 0 (zero) risk-taking strategy based on decades of insight. Gold is the future of currencies. As global fiat currencies decline in real value, gold continues to rise. It's not just an investment—it's your shield against currency collapse."
       }
     ]
   },
@@ -29,33 +24,70 @@ const faqCategories = [
     category: "Investment Plans",
     faqs: [
       {
-        question: "What are the available investment plans?",
-        answer: "We offer three plans: Starter Plan (3% monthly ROI, $100-$999), Growth Plan (5% monthly ROI, $1,000-$9,999), and Premium Plan (7% monthly ROI, $10,000+)."
+        question: "How much profit can I earn each month?",
+        answer: (
+          <div className="space-y-4">
+            <p>Profit depends on your selected investment plan:</p>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-primary/10">
+                    <th className="p-3 text-left border border-border">Investment Amount</th>
+                    <th className="p-3 text-left border border-border">Monthly Profit</th>
+                    <th className="p-3 text-left border border-border">Investment Tenure</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="p-3 border border-border">$50 – $500</td>
+                    <td className="p-3 border border-border">4% – 4.5%</td>
+                    <td className="p-3 border border-border">6 months</td>
+                  </tr>
+                  <tr className="bg-primary/5">
+                    <td className="p-3 border border-border">$501 – $5,000</td>
+                    <td className="p-3 border border-border">4.8% – 5.2%</td>
+                    <td className="p-3 border border-border">6 months</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 border border-border">$5,001 – $50,000</td>
+                    <td className="p-3 border border-border">5% – 5.5%</td>
+                    <td className="p-3 border border-border">9 months</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Profit is credited to your account between the 10th–15th of each month.</p>
+          </div>
+        )
       },
       {
-        question: "How is the ROI calculated and paid?",
-        answer: "ROI is calculated monthly based on your total investment amount. Returns are automatically credited to your wallet on the same date each month after your investment."
+        question: "Is there any risk involved?",
+        answer: "No. We apply a zero-risk trading model, developed through 17 years of real market experience. Our approach focuses on safety, growth, and financial consistency."
       },
       {
-        question: "Can I upgrade my investment plan?",
-        answer: "Yes, you can upgrade your plan at any time by making an additional investment that meets the minimum requirement for the higher tier."
+        question: "How is investor protection ensured?",
+        answer: "We are in the process of partnering with financial auditors, payment security providers, and investor verification services to enhance your confidence. Your satisfaction and peace of mind are our highest priorities."
       }
     ]
   },
   {
-    category: "Payments & Withdrawals",
+    category: "Deposits & Withdrawals",
     faqs: [
       {
-        question: "What payment methods do you accept?",
-        answer: "We accept Bitcoin (BTC), Ethereum (ETH), USDT (TRC20 and ERC20), and other major cryptocurrencies. Bank transfers are also available in select regions."
+        question: "How do I deposit funds?",
+        answer: "Deposits can be made through:\n\n• Crypto wallets (USDT, BTC, ETH, etc.)\n\n• Secure third-party payment gateways (coming soon)\n\nEach transaction is encrypted and securely processed."
       },
       {
-        question: "How do I withdraw my funds?",
-        answer: "Go to your dashboard, click 'Withdraw', enter the amount and your wallet address. Withdrawals are processed within 24-48 hours after verification."
+        question: "Can I withdraw my original investment anytime?",
+        answer: "The original investment is locked for the selected tenure. However, early withdrawal is available with the following conditions:\n\n• 10% early exit fee on the invested amount\n\n• 30–45 business days for processing\n\n• Deductions for payment gateway and administrative services will apply"
       },
       {
-        question: "Are there any withdrawal fees?",
-        answer: "We charge a minimal network fee for cryptocurrency withdrawals to cover blockchain transaction costs. The exact fee depends on the network congestion."
+        question: "When and how can I withdraw profits?",
+        answer: "Your profit is automatically added to your account balance between the 10th–15th of each month.\n\nYou can withdraw your monthly profits anytime after they appear in your account, using your preferred withdrawal method (e.g., crypto wallets, or others as configured)."
+      },
+      {
+        question: "Will I receive confirmation of my investment?",
+        answer: "Yes. As soon as your deposit is received, your investment balance is automatically updated in your account dashboard. No manual confirmation is needed.\n\nInside your dashboard, you can view:\n\n• Your total invested amount\n\n• Active plan & profit rate\n\n• Monthly profit credited\n\n• Withdrawal history"
       }
     ]
   },
@@ -63,33 +95,37 @@ const faqCategories = [
     category: "Referral Program",
     faqs: [
       {
-        question: "How does the referral program work?",
-        answer: "Share your unique referral link with friends. When they sign up and make their first investment, you earn 5% of their investment amount as a bonus."
+        question: "Do you offer a referral program?",
+        answer: "Yes! We offer a generous multi-level referral program that rewards users for inviting others to invest on the platform."
       },
       {
-        question: "When do I receive referral bonuses?",
-        answer: "Referral bonuses are credited to your wallet immediately after your referred friend's investment is confirmed on the blockchain."
+        question: "How much can I earn from referrals?",
+        answer: "You will earn a 2% referral bonus from every direct deposit made by your referred users.\n\nFor example:\n\nIf you refer 10 people who each deposit $1,000, you will earn $200 (2% of $10,000).\n\nThere is no limit on how many people you can refer or how much you can earn!"
       },
       {
-        question: "Is there a limit to how many people I can refer?",
-        answer: "No, there's no limit! You can refer as many people as you want and earn 5% bonus on each of their investments."
+        question: "How and when can I withdraw referral earnings?",
+        answer: "Referral bonuses are added to your account automatically after your referral completes a successful deposit.\n\nYou can withdraw referral earnings:\n\n• Once your referral bonus balance reaches $30\n\n• By submitting a withdrawal request\n\n• After verification by our payment department, your bonus will be sent directly to your crypto wallet\n\nProcessing time follows the same schedule and conditions as regular withdrawals."
+      },
+      {
+        question: "Is there a second-level referral bonus (chain system)?",
+        answer: "Yes! We also reward you with a 0.5% bonus from deposits made by your second-level referrals — that is, users invited by your referrals.\n\nThis means:\n\n• You earn 2% from your direct referrals\n\n• Plus 0.5% from their referrals (your second-level)\n\nIt's a powerful way to build passive income by growing your network."
       }
     ]
   },
   {
-    category: "Security & Support",
+    category: "Support & Assistance",
     faqs: [
       {
-        question: "How secure is my investment?",
-        answer: "We use advanced security measures including multi-signature wallets, cold storage, SSL encryption, and regular security audits to protect your funds."
+        question: "How can I contact support?",
+        answer: "Our support team is available 7 days a week to assist with any questions or concerns.\n\nYou can contact us via:\n\n• WhatsApp (for fast responses)\n\n• Email (replies within 24 hours)\n\n• Live Chat (coming soon)\n\nSupport contact details are available on our Contact Us page and inside your account dashboard."
       },
       {
-        question: "What happens if I forget my password?",
-        answer: "Click 'Forgot Password' on the login page, enter your email address, and follow the instructions in the reset email to create a new password."
+        question: "What kind of help can I get from support?",
+        answer: "We're here to assist you with:\n\n• Deposit and withdrawal inquiries\n\n• Account or login issues\n\n• Referral bonus updates\n\n• Plan-related questions\n\n• Verification and technical assistance\n\nYour satisfaction is our priority."
       },
       {
-        question: "How can I contact customer support?",
-        answer: "You can reach us through live chat (24/7), email support@cryptoinvest.com, or use our AI chatbot for instant assistance with common questions."
+        question: "Do you support all countries and languages?",
+        answer: "✅ Yes! We welcome investors from all countries without restriction.\n🌐 Our support team can communicate in any language using real-time translation tools, so you will always receive clear and helpful responses."
       }
     ]
   }
@@ -112,8 +148,6 @@ const FAQ = () => {
       
       {/* Header */}
       <div className="container px-4 pt-24 pb-12">
-        
-
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -127,7 +161,7 @@ const FAQ = () => {
             Frequently Asked <span className="text-gradient">Questions</span>
           </h1>
           <p className="text-lg text-muted-foreground">
-            Find answers to all your questions about our crypto investment platform
+            Find answers to all your questions about our gold investment platform
           </p>
         </motion.div>
       </div>
@@ -177,9 +211,13 @@ const FAQ = () => {
                             transition={{ duration: 0.3 }}
                             className="px-6 pb-6"
                           >
-                            <p className="text-muted-foreground leading-relaxed">
-                              {faq.answer}
-                            </p>
+                            <div className="text-muted-foreground leading-relaxed">
+                              {typeof faq.answer === 'string' ? (
+                                <p className="whitespace-pre-line">{faq.answer}</p>
+                              ) : (
+                                faq.answer
+                              )}
+                            </div>
                           </motion.div>
                         )}
                       </CardContent>
@@ -202,12 +240,10 @@ const FAQ = () => {
             <CardContent className="p-8">
               <h3 className="text-xl font-bold mb-4 text-foreground">Still have questions?</h3>
               <p className="text-muted-foreground mb-6">
-                Our support team is here to help you 24/7. Get in touch with us through live chat or email.
+                Our support team is here to help you 7 days a week. Get in touch with us through email.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="button-gradient">
-                  Start Live Chat
-                </Button>
+                
                 <Button variant="outline" className="glass border-border">
                   Email Support
                 </Button>

@@ -81,11 +81,11 @@ const WhyChooseUs = () => {
           <h2 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
             The Smart Choice for 
             <span className="block bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              Crypto Investment
+              Gold Investment
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Experience the most secure, profitable, and user-friendly crypto investment platform 
+            Experience the most secure, profitable, and user-friendly Gold investment platform 
             designed for both beginners and experienced traders
           </p>
         </motion.div>

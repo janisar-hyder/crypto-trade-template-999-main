@@ -24,7 +24,7 @@ const DashboardOverview = () => {
       </div>
 
       {/* Quick Actions */}
-      <QuickActions />
+      {/* <QuickActions /> */}
 
       {/* Dashboard Cards */}
       <DashboardCards />

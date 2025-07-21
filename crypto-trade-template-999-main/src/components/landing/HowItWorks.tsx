@@ -11,7 +11,7 @@ const steps = [
   {
     icon: CreditCard,
     title: "Buy Plan",
-    description: "Choose your investment plan and make secure crypto payments"
+    description: "Choose your investment plan and make secure Gold payments"
   },
   {
     icon: TrendingUp,
@@ -59,7 +59,7 @@ const HowItWorks = () => {
             How It Works
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Start your crypto investment journey in four simple steps and begin earning 
+            Start your Gold investment journey in four simple steps and begin earning 
             <span className="text-primary font-semibold"> consistent monthly returns</span>
           </p>
         </motion.div>

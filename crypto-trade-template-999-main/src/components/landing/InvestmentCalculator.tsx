@@ -1,29 +1,28 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState } from "react"; // Added useState import
 import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp } from "lucide-react";
+import { ArrowRight, TrendingUp, Gem, Coins, BarChart3 } from "lucide-react";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, ReferenceLine } from "recharts";
 
 const InvestmentCalculator = () => {
-  const [selectedMetal, setSelectedMetal] = useState("crypto");
   const [startingAmount, setStartingAmount] = useState(3000);
   const [monthlyInvestment, setMonthlyInvestment] = useState(0);
 
   // Calculate projected value based on average growth
   const calculateProjectedValue = () => {
     const years = 5;
-    const annualGrowthRate = selectedMetal === "crypto" ? 0.15 : 0.10;
+    const annualGrowthRate = 0.12; // Gold historically grows ~12% annually
     const monthlyRate = annualGrowthRate / 12;
-    
+
     // Future value of lump sum
     const lumpSumFV = startingAmount * Math.pow(1 + annualGrowthRate, years);
-    
+
     // Future value of monthly investments (annuity)
-    const monthlyFV = monthlyInvestment > 0 
+    const monthlyFV = monthlyInvestment > 0
       ? (monthlyInvestment * (Math.pow(1 + monthlyRate, years * 12) - 1)) / monthlyRate
       : 0;
-    
+
     return lumpSumFV + monthlyFV;
   };
 
@@ -31,24 +30,24 @@ const InvestmentCalculator = () => {
   const generateChartData = () => {
     const data = [];
     const years = 5;
-    const annualGrowthRate = selectedMetal === "crypto" ? 0.15 : 0.10;
+    const annualGrowthRate = 0.12;
     const monthlyRate = annualGrowthRate / 12;
-    
+
     for (let month = 0; month <= years * 12; month++) {
       const year = Math.floor(month / 12);
       const monthInYear = month % 12;
-      
+
       // Calculate lump sum growth
       const lumpSumValue = startingAmount * Math.pow(1 + annualGrowthRate, month / 12);
-      
+
       // Calculate monthly investment accumulation
       let monthlyAccumulation = 0;
       if (monthlyInvestment > 0 && month > 0) {
         monthlyAccumulation = (monthlyInvestment * (Math.pow(1 + monthlyRate, month) - 1)) / monthlyRate;
       }
-      
+
       const totalValue = lumpSumValue + monthlyAccumulation;
-      
+
       data.push({
         month: month,
         year: year,
@@ -57,7 +56,7 @@ const InvestmentCalculator = () => {
         displayLabel: month % 12 === 0 ? `Year ${year}` : ""
       });
     }
-    
+
     return data;
   };
 
@@ -95,36 +94,36 @@ const InvestmentCalculator = () => {
               <div className="space-y-3 md:space-y-4">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight">
                   If I had invested{" "}
-                  <span className="text-primary">5 years ago?</span>
+                  <span className="text-gradient">in gold 5 years ago?</span>
                 </h2>
-                
+
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
-                    <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center">
+                    <Gem className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full"></div>
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full"></div>
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full"></div>
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-amber-200 to-amber-400 rounded-full"></div>
                 </div>
               </div>
 
               <div className="space-y-3 md:space-y-4">
                 <p className="text-base sm:text-lg text-muted-foreground">
-                  Cryptocurrencies have historically gained significant value in the long term. 
-                  Estimate how much you could have earned with consistent investments over the past 5 years.
+                  Gold has historically preserved and grown wealth over time.
+                  See how much your investment could have grown with our gold-backed investment plans.
                 </p>
-                
+
                 <div className="flex items-center space-x-2 text-primary">
-                  <span className="text-lg">💡</span>
+                  <span className="text-lg">💎</span>
                   <p className="font-medium text-sm sm:text-base">
-                    We have 3 strategies matching your starting amount!
+                    Gold has outperformed most traditional investments over the past decade
                   </p>
                 </div>
-                
-                <Button 
-                  variant="ghost" 
+
+                <Button
+                  variant="ghost"
                   className="text-primary hover:text-primary/80 p-0 h-auto font-medium text-sm sm:text-base"
                 >
-                  See my strategies <ArrowRight className="w-4 h-4 ml-2" />
+                  View Gold Performance <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </div>
 
@@ -136,13 +135,13 @@ const InvestmentCalculator = () => {
                 className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-4 sm:p-6"
               >
                 <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-lg font-semibold text-foreground">Investment Growth</h3>
+                  <h3 className="text-lg font-semibold text-foreground">Gold Investment Growth</h3>
                   <div className="flex items-center space-x-2">
                     <span className="text-xs text-muted-foreground">5 Year Projection</span>
                     <div className="w-3 h-3 rounded-full bg-primary"></div>
                   </div>
                 </div>
-                
+
                 <div className="h-56 sm:h-64 w-full">
                   <ChartContainer config={chartConfig} className="h-full w-full">
                     <ResponsiveContainer width="100%" height="100%">
@@ -152,18 +151,18 @@ const InvestmentCalculator = () => {
                       >
                         <defs>
                           <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.8}/>
-                            <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0.1}/>
+                            <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.8} />
+                            <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0.1} />
                           </linearGradient>
                         </defs>
-                        
-                        <CartesianGrid 
-                          strokeDasharray="3 3" 
-                          vertical={false} 
+
+                        <CartesianGrid
+                          strokeDasharray="3 3"
+                          vertical={false}
                           stroke="hsl(var(--border))"
-                          strokeOpacity={0.5}
+                          strokeOpacity={0.3}
                         />
-                        
+
                         <XAxis
                           dataKey="month"
                           axisLine={false}
@@ -175,18 +174,26 @@ const InvestmentCalculator = () => {
                           }}
                           tickMargin={10}
                         />
-                        
+
                         <YAxis
                           axisLine={false}
                           tickLine={false}
                           tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 12 }}
-                          tickFormatter={(value) => `€${(value / 1000).toFixed(0)}k`}
+                          tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
                           width={40}
                         />
-                        
-                        <ChartTooltip 
-                          content={<ChartTooltipContent 
-                            formatter={(value) => [`€${Number(value).toLocaleString()}`, "Value"]}
+
+                        {/* Reference line for starting amount */}
+                        <ReferenceLine
+                          y={startingAmount}
+                          stroke="hsl(var(--primary))"
+                          strokeDasharray="3 3"
+                          strokeOpacity={0.5}
+                        />
+
+                        <ChartTooltip
+                          content={<ChartTooltipContent
+                            formatter={(value) => [`$${Number(value).toLocaleString()}`, "Value"]}
                             labelFormatter={(label) => {
                               const year = Math.floor(Number(label) / 12);
                               const month = Number(label) % 12;
@@ -200,7 +207,7 @@ const InvestmentCalculator = () => {
                             }}
                           />}
                         />
-                        
+
                         <Area
                           type="monotone"
                           dataKey="value"
@@ -217,8 +224,8 @@ const InvestmentCalculator = () => {
                 </div>
 
                 <div className="flex justify-between items-center mt-4 text-xs text-muted-foreground">
-                  <span>Projected growth: {selectedMetal === "crypto" ? "15%" : "10%"} annually</span>
-                  <span>Adjusted for compound interest</span>
+                  <span>Projected growth: 12% annually</span>
+                  <span>Based on historical gold performance</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -232,70 +239,54 @@ const InvestmentCalculator = () => {
             >
               <div className="bg-card border border-border rounded-xl lg:rounded-2xl p-6 md:p-8 shadow-lg lg:shadow-2xl">
                 <div className="space-y-4 md:space-y-6">
-                  {/* Asset Selection */}
-                  <div className="space-y-2 md:space-y-3">
-                    <label className="text-sm font-medium text-muted-foreground">
-                      Investment Type
-                    </label>
-                    <div className="flex space-x-2">
-                      <Button
-                        variant={selectedMetal === "crypto" ? "default" : "outline"}
-                        size="sm"
-                        onClick={() => setSelectedMetal("crypto")}
-                        className="rounded-full text-xs sm:text-sm"
-                      >
-                        Crypto
-                      </Button>
-                      <Button
-                        variant={selectedMetal === "stocks" ? "default" : "outline"}
-                        size="sm"
-                        onClick={() => setSelectedMetal("stocks")}
-                        className="rounded-full text-xs sm:text-sm"
-                      >
-                        Stocks
-                      </Button>
-                    </div>
-                  </div>
-
+                  {/* Starting Amount */}
                   {/* Starting Amount */}
                   <div className="space-y-2 md:space-y-3">
-                    <label className="text-sm font-medium text-muted-foreground">
+                    <label htmlFor="startingAmount" className="text-sm font-medium text-muted-foreground">
                       Starting amount
                     </label>
                     <div className="relative">
                       <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">
-                        €
+                        $
                       </span>
                       <input
+                        id="startingAmount"
                         type="number"
                         value={startingAmount}
                         onChange={(e) => setStartingAmount(Number(e.target.value))}
                         className="w-full pl-8 pr-4 py-2 sm:py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        aria-label="Starting investment amount in dollars"
                       />
                     </div>
                     <div className="w-full bg-muted rounded-full h-2">
-                      <div 
+                      <div
                         className="bg-primary h-2 rounded-full transition-all duration-300"
                         style={{ width: `${Math.min((startingAmount / 10000) * 100, 100)}%` }}
+                        role="progressbar"
+                        aria-valuenow={Math.min((startingAmount / 10000) * 100, 100)}
+                        aria-valuemin={0}
+                        aria-valuemax={100}
                       />
                     </div>
                   </div>
 
                   {/* Monthly Investment */}
                   <div className="space-y-2 md:space-y-3">
-                    <label className="text-sm font-medium text-muted-foreground">
+                    <label htmlFor="monthlyInvestment" className="text-sm font-medium text-muted-foreground">
                       Add a monthly investment
                     </label>
                     <div className="relative">
                       <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">
-                        €
+                        $
                       </span>
                       <input
+                        id="monthlyInvestment"
                         type="number"
                         value={monthlyInvestment}
                         onChange={(e) => setMonthlyInvestment(Number(e.target.value))}
                         className="w-full pl-8 pr-4 py-2 sm:py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
                         placeholder="0"
+                        aria-label="Monthly additional investment in dollars"
                       />
                     </div>
                   </div>
@@ -306,9 +297,18 @@ const InvestmentCalculator = () => {
                       Today you would have:
                     </p>
                     <div className="text-2xl sm:text-3xl font-bold text-primary">
-                      €{projectedValue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                      ${projectedValue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </div>
                   </div>
+
+                  {/* CTA Button */}
+                  <Button
+                    size="lg"
+                    className="w-full mt-4 button-gradient"
+                  >
+                    <Coins className="w-5 h-5 mr-2" />
+                    Start Gold Investment Now
+                  </Button>
                 </div>
               </div>
             </motion.div>
