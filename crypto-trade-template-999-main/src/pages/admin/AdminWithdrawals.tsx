@@ -274,9 +274,7 @@ const AdminWithdrawals = () => {
                             </AlertDialog>
                           </>
                         )}
-                        <Button variant="outline" size="sm">
-                          <Eye className="h-4 w-4" />
-                        </Button>
+                        
                       </div>
                     </TableCell>
                   </TableRow>
@@ -380,9 +378,7 @@ const AdminWithdrawals = () => {
                     </AlertDialog>
                   </>
                 )}
-                <Button variant="outline" size="sm">
-                  <Eye className="h-4 w-4" />
-                </Button>
+                
               </div>
             </CardContent>
           </Card>
