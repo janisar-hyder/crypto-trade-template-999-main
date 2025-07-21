@@ -64,13 +64,41 @@
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "rlig" 1, "calt" 1;
     overflow-x: hidden;
+    
   }
   
   html {
     background-color: hsl(var(--background));
     scroll-behavior: smooth;
+    scrollbar-width: thin;
+  scrollbar-color: hsl(var(--primary) / 0.7) hsl(var(--background));
   }
 }
+
+/* Custom scrollbar for the entire website */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px; /* For horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.7);
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* For Firefox */
+
+
 
 @layer components {
   .glass {
@@ -108,6 +136,9 @@
     animation: marquee 25s linear infinite;
   }
 }
+
+
+
 
 @layer utilities {
   button:focus-visible,

@@ -39,70 +39,13 @@ const AdminTopBar = ({ onMenuClick }: AdminTopBarProps) => {
           <Menu className="h-5 w-5" />
         </Button>
 
-        {/* Account Status & Total */}
-        <div className="hidden sm:flex items-center gap-6">
-          <div className="flex items-center gap-2">
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-green-500/10 border border-green-500/20 rounded-full">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-green-400">Account Status:</span>
-            </div>
-            <div className="w-32 h-2 bg-white/10 rounded-full overflow-hidden">
-              <div className="w-4/5 h-full bg-gradient-to-r from-green-400 to-primary rounded-full" />
-            </div>
-          </div>
-          <div className="text-right">
-            <div className="text-xs text-gray-400">Total:</div>
-            <div className="text-sm font-bold text-primary">674.04 pt</div>
-          </div>
-        </div>
+        
       </div>
 
-      {/* Center - Search */}
-      <div className="flex-1 max-w-md mx-4">
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-          <Input
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search users by name or email..."
-            className="pl-10 bg-white/5 border-white/10 focus:bg-white/10 transition-colors backdrop-blur-sm rounded-xl"
-          />
-        </div>
-      </div>
 
-      {/* Right side - Notifications and Profile */}
+      {/* Right side Profile */}
       <div className="flex items-center space-x-4">
-        {/* Notifications */}
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon" className="relative hover:bg-white/10 border border-white/10 rounded-xl backdrop-blur-sm">
-              <Bell className="h-4 w-4" />
-              {totalNotifications > 0 && (
-                <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs bg-red-500 hover:bg-red-600 border-0">
-                  {totalNotifications}
-                </Badge>
-              )}
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-64 bg-black/95 backdrop-blur-xl border-white/10">
-            <div className="p-3 font-semibold flex items-center gap-2 border-b border-white/10">
-              <Bell className="h-4 w-4" />
-              Notifications
-            </div>
-            <DropdownMenuItem className="hover:bg-white/5">
-              <div className="flex justify-between w-full">
-                <span>Pending Withdrawals</span>
-                <Badge variant="destructive" className="ml-2">{notifications[0].count}</Badge>
-              </div>
-            </DropdownMenuItem>
-            <DropdownMenuItem className="hover:bg-white/5">
-              <div className="flex justify-between w-full">
-                <span>New Messages</span>
-                <Badge variant="secondary" className="ml-2">{notifications[1].count}</Badge>
-              </div>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+
 
         {/* Admin Profile */}
         <DropdownMenu>

@@ -57,67 +57,54 @@ const Settings = () => {
         </TabsList>
 
         <TabsContent value="profile">
-          <Card className="bg-background/50 backdrop-blur-sm border border-border hover:border-primary/50 transition-all duration-300">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-lg font-semibold">
-                <div className="p-2 rounded-lg bg-blue-500/10 border border-blue-500/20">
-                  <User className="h-5 w-5 text-blue-500" />
-                </div>
-                <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-                  Profile Information
-                </span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div>
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input 
-                      id="firstName" 
-                      defaultValue="John" 
-                      className="bg-background focus:bg-background focus:ring-0 focus:ring-offset-0 focus:border-0 border-border/99"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input 
-                      id="email" 
-                      type="email" 
-                      defaultValue="john@example.com" 
-                      className="bg-background focus:bg-background focus:ring-0 focus:ring-offset-0 focus:border-0 border-border/99"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div>
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input 
-                      id="lastName" 
-                      defaultValue="Doe" 
-                      className="bg-background focus:bg-background focus:ring-0 focus:ring-offset-0 focus:border-0 border-border/99"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input 
-                      id="phone" 
-                      defaultValue="+1 (555) 123-4567" 
-                      className="bg-background focus:bg-background focus:ring-0 focus:ring-offset-0 focus:border-0 border-border/99"
-                    />
-                  </div>
-                </div>
-              </div>
+  <Card className="bg-background/50 backdrop-blur-sm border border-border hover:border-primary/50 transition-all duration-300">
+    <CardHeader>
+      <CardTitle className="flex items-center gap-3 text-lg font-semibold">
+        <div className="p-2 rounded-lg bg-blue-500/10 border border-blue-500/20">
+          <User className="h-5 w-5 text-blue-500" />
+        </div>
+        <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+          Profile Information
+        </span>
+      </CardTitle>
+    </CardHeader>
+    <CardContent className="space-y-4">
+      <div className="space-y-4">
+        <div>
+          <Label htmlFor="firstName">First Name</Label>
+          <Input 
+            id="firstName" 
+            defaultValue="John" 
+            className="bg-background focus:bg-background focus:ring-0 focus:ring-offset-0 focus:border-0 border-border/99 w-full"
+          />
+        </div>
+        <div>
+          <Label htmlFor="lastName">Last Name</Label>
+          <Input 
+            id="lastName" 
+            defaultValue="Doe" 
+            className="bg-background focus:bg-background focus:ring-0 focus:ring-offset-0 focus:border-0 border-border/99 w-full"
+          />
+        </div>
+        <div>
+          <Label htmlFor="phone">Phone Number</Label>
+          <Input 
+            id="phone" 
+            defaultValue="+1 (555) 123-4567" 
+            className="bg-background focus:bg-background focus:ring-0 focus:ring-offset-0 focus:border-0 border-border/99 w-full"
+          />
+        </div>
+      </div>
 
-              <Button 
-                onClick={handleSaveProfile} 
-                className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 shadow-md"
-              >
-                Save Changes
-              </Button>
-            </CardContent>
-          </Card>
-        </TabsContent>
+      <Button 
+        onClick={handleSaveProfile} 
+        className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 shadow-md mt-4"
+      >
+        Save Changes
+      </Button>
+    </CardContent>
+  </Card>
+</TabsContent>
 
         <TabsContent value="security">
           <div className="space-y-6">

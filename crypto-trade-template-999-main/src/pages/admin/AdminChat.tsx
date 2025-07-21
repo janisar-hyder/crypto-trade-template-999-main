@@ -222,9 +222,6 @@ const AdminChat = () => {
                 {/* Message Input */}
                 <div className="border-t p-4">
                   <div className="flex items-center space-x-2">
-                    <Button variant="ghost" size="icon">
-                      <Paperclip className="h-4 w-4" />
-                    </Button>
                     <Input
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}

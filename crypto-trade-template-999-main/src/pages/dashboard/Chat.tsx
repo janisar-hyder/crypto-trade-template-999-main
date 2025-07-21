@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -113,7 +112,7 @@ const Chat = () => {
         <CardContent className="flex-1 overflow-hidden p-0">
           <div className="h-full flex flex-col">
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4">
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar">
               {messages.map((message) => (
                 <div
                   key={message.id}
@@ -156,9 +155,6 @@ const Chat = () => {
             {/* Message Input */}
             <div className="border-t p-4">
               <div className="flex items-center gap-2">
-                {/* <Button variant="outline" size="icon">
-                  <Paperclip className="w-4 h-4" />
-                </Button> */}
                 <Input
                   value={newMessage}
                   onChange={(e) => setNewMessage(e.target.value)}
@@ -174,6 +170,24 @@ const Chat = () => {
           </div>
         </CardContent>
       </Card>
+
+      <style jsx global>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: hsl(var(--background));
+          border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: hsl(var(--primary) / 0.5);
+          border-radius: 3px;
+          transition: background-color 0.2s;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: hsl(var(--primary));
+        }
+      `}</style>
     </div>
   );
 };

@@ -8,12 +8,12 @@ const DashboardCards = () => {
     {
       title: "ROI Balance",
       amount: "$408.79",
-      subtitle: "Last payout: 2 days ago",
+      subtitle: "See Your Profit Clearly",
       icon: TrendingUp,
       color: "text-amber-400",
       bgColor: "bg-amber-500/10",
       borderColor: "border-amber-500/20",
-      action: "View ROI History",
+      
     },
     {
       title: "Account Balance",
@@ -23,7 +23,7 @@ const DashboardCards = () => {
       color: "text-green-400",
       bgColor: "bg-green-500/10",
       borderColor: "border-green-500/20",
-      action: "Request Withdrawal",
+
     },
     {
       title: "Active Plan",
@@ -33,7 +33,7 @@ const DashboardCards = () => {
       color: "text-blue-400",
       bgColor: "bg-blue-500/10",
       borderColor: "border-blue-500/20",
-      action: "Upgrade Plan",
+
     },
     {
       title: "KYC Status",
@@ -82,16 +82,7 @@ const DashboardCards = () => {
               )}
             </div>
             
-            {card.action && (
-              <Button 
-                size="sm" 
-                variant="outline"
-                className={`mt-4 w-full ${card.borderColor} hover:${card.borderColor}/50`}
-              >
-                {card.action}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            )}
+            
           </CardContent>
         </Card>
       ))}
