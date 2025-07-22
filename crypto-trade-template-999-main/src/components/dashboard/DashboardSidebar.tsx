@@ -14,7 +14,8 @@ import {
   Twitter,
   Globe,
   MessageCircle,
-  ShieldCheck
+  ShieldCheck,
+  Star // Add this import
 } from "lucide-react";
 
 interface DashboardSidebarProps {
@@ -28,12 +29,12 @@ const DashboardSidebar = ({ isOpen, onClose }: DashboardSidebarProps) => {
   const menuItems = [
     { icon: LayoutDashboard, label: "Overview", path: "/dashboard" },
     { icon: TrendingUp, label: "My Investments", path: "/dashboard/investments" },
-    // { icon: Gift, label: "Rewards", path: "/dashboard/rewards" },
     { icon: Users, label: "Referrals", path: "/dashboard/referrals" },
     { icon: CreditCard, label: "Withdraw", path: "/dashboard/withdraw" },
     { icon: ShieldCheck, label: "KYC Verification", path: "/dashboard/kyc" },
     { icon: MessageCircle, label: "Chat with Admin", path: "/dashboard/chat" },
     { icon: Settings, label: "Profile / Settings", path: "/dashboard/settings" },
+    { icon: Star, label: "Give Review", path: "/dashboard/review" }, // Add this line
   ];
 
   const socialLinks = [

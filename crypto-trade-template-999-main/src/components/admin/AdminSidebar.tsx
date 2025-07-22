@@ -10,7 +10,8 @@ import {
   MessageCircle,
   LogOut,
   X,
-  Shield
+  Shield,
+  Star
 } from "lucide-react";
 
 interface AdminSidebarProps {
@@ -26,6 +27,7 @@ const AdminSidebar = ({ isOpen, onClose }: AdminSidebarProps) => {
     { icon: Users, label: "Users", path: "/admin/users" },
     { icon: CreditCard, label: "Withdrawals", path: "/admin/withdrawals" },
     { icon: MessageCircle, label: "Chat", path: "/admin/chat" },
+    { icon: Star, label: "User Reviews", path: "/admin/UserReviews" }
   ];
 
   return (

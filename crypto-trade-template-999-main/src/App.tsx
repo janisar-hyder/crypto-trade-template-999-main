@@ -14,7 +14,7 @@ import Dashboard from "./pages/Dashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import DashboardOverview from "./pages/dashboard/DashboardOverview";
 import Investments from "./pages/dashboard/Investments";
-// import Rewards from "./pages/dashboard/Rewards";
+import ReviewPage from "./pages/dashboard/ReviewPage";
 import Referrals from "./pages/dashboard/Referrals";
 import Withdraw from "./pages/dashboard/Withdraw";
 import Settings from "./pages/dashboard/Settings";
@@ -22,6 +22,7 @@ import Chat from "./pages/dashboard/Chat";
 import KYCVerification from "./pages/dashboard/KYCVerification";
 import AdminOverview from "./pages/admin/AdminOverview";
 import AdminUsers from "./pages/admin/AdminUsers";
+import UserReviews from "./pages/admin/UserReviews";
 import AdminWithdrawals from "./pages/admin/AdminWithdrawals";
 import AdminChat from "./pages/admin/AdminChat";
 
@@ -42,7 +43,7 @@ const App = () => (
             <Route path="/dashboard" element={<Dashboard />}>
               <Route index element={<DashboardOverview />} />
               <Route path="investments" element={<Investments />} />
-              {/* <Route path="rewards" element={<Rewards />} /> */}
+              <Route path="review" element={<ReviewPage />} />
               <Route path="referrals" element={<Referrals />} />
               <Route path="withdraw" element={<Withdraw />} />
               <Route path="kyc" element={<KYCVerification />} />
@@ -52,6 +53,7 @@ const App = () => (
             <Route path="/admin" element={<AdminDashboard />}>
               <Route index element={<AdminOverview />} />
               <Route path="users" element={<AdminUsers />} />
+              <Route path="userreviews" element={<UserReviews />} />
               <Route path="withdrawals" element={<AdminWithdrawals />} />
               <Route path="chat" element={<AdminChat />} />
             </Route>

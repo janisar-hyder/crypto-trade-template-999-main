@@ -4,50 +4,50 @@ import { motion, useAnimation } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Card } from "./ui/card";
-import { Quote } from "lucide-react";
+import { Quote, Star, StarHalf } from "lucide-react";
 
 const testimonials = [
   {
     name: "Michael Chen",
     role: "Professional Trader",
     image: "https://avatars.githubusercontent.com/u/1234567?v=4",
-    content:
-      "The real-time market data and advanced trading features have significantly improved my trading performance. The platform's security measures give me peace of mind.",
+    content: "The real-time market data and advanced trading features have significantly improved my trading performance. The platform's security measures give me peace of mind.",
+    rating: 5
   },
   {
     name: "Sarah Johnson",
     role: "Gold Fund Manager",
     image: "https://avatars.githubusercontent.com/u/2345678?v=4",
-    content:
-      "GoldTrade's institutional-grade tools have transformed our trading strategy. The API integration and automated features have saved us countless hours.",
+    content: "GoldTrade's institutional-grade tools have transformed our trading strategy. The API integration and automated features have saved us countless hours.",
+    rating: 4.5
   },
   {
     name: "David Wilson",
     role: "Early Gold Investor",
     image: "https://avatars.githubusercontent.com/u/3456789?v=4",
-    content:
-      "The customer support is exceptional, and the platform's intuitive design made getting started with Gold trading seamless. A game-changer for both beginners and pros.",
+    content: "The customer support is exceptional, and the platform's intuitive design made getting started with Gold trading seamless. A game-changer for both beginners and pros.",
+    rating: 5
   },
   {
     name: "Emily Zhang",
     role: "DeFi Developer",
     image: "https://avatars.githubusercontent.com/u/4567890?v=4",
-    content:
-      "We've seen remarkable improvements in our trading efficiency since switching to GoldTrade. The smart order routing and liquidity aggregation are particularly impressive.",
+    content: "We've seen remarkable improvements in our trading efficiency since switching to GoldTrade. The smart order routing and liquidity aggregation are particularly impressive.",
+    rating: 4
   },
   {
     name: "James Rodriguez",
     role: "Gold Security Expert",
     image: "https://avatars.githubusercontent.com/u/5678901?v=4",
-    content:
-      "The security features are robust and the regular updates keep us ahead of emerging threats. It's exactly what the Gold industry needed.",
+    content: "The security features are robust and the regular updates keep us ahead of emerging threats. It's exactly what the Gold industry needed.",
+    rating: 5
   },
   {
     name: "Lisa Thompson",
     role: "Portfolio Manager",
     image: "https://avatars.githubusercontent.com/u/6789012?v=4",
-    content:
-      "The platform's ability to handle complex trading strategies while maintaining simplicity in its interface is remarkable. It's been invaluable for our portfolio management.",
+    content: "The platform's ability to handle complex trading strategies while maintaining simplicity in its interface is remarkable. It's been invaluable for our portfolio management.",
+    rating: 4.5
   },
 ];
 
@@ -72,8 +72,44 @@ const TestimonialsSection = () => {
     }
   }, [isHovered, controls]);
 
+  const renderStars = (rating: number) => {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(
+        <Star 
+          key={`full-${i}`} 
+          className="w-4 h-4 fill-yellow-400 text-yellow-400" 
+        />
+      );
+    }
+
+    if (hasHalfStar) {
+      stars.push(
+        <StarHalf 
+          key="half" 
+          className="w-4 h-4 fill-yellow-400 text-yellow-400" 
+        />
+      );
+    }
+
+    const remainingStars = 5 - stars.length;
+    for (let i = 0; i < remainingStars; i++) {
+      stars.push(
+        <Star 
+          key={`empty-${i}`} 
+          className="w-4 h-4 text-yellow-400/30" 
+        />
+      );
+    }
+
+    return stars;
+  };
+
   return (
-    <section className="py-20 overflow-hidden  ">
+    <section className="py-20 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
@@ -106,7 +142,6 @@ const TestimonialsSection = () => {
         >
           <div className="absolute inset-0 pointer-events-none z-10 bg-gradient-to-r from-background via-background/0 to-background [background-size:200%_100%] [background-position:center]" />
 
-
           <motion.div
             className="flex min-w-[200%] space-x-4 py-6"
             animate={controls}
@@ -126,6 +161,17 @@ const TestimonialsSection = () => {
                   <p className="text-foreground/90 mb-6 leading-relaxed text-sm group-hover:text-foreground transition-colors">
                     {testimonial.content}
                   </p>
+                  
+                  {/* Star Rating */}
+                  <div className="flex items-center mb-4">
+                    <div className="flex mr-2">
+                      {renderStars(testimonial.rating)}
+                    </div>
+                    <span className="text-sm text-muted-foreground group-hover:text-primary/80 transition-colors">
+                      {testimonial.rating.toFixed(1)}
+                    </span>
+                  </div>
+                  
                   <div className="flex items-center gap-4 mt-auto">
                     <Avatar className="h-12 w-12 border-2 border-primary/30 group-hover:border-primary/50 transition-colors">
                       <AvatarImage src={testimonial.image} />
