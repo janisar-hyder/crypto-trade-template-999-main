@@ -7,6 +7,7 @@ import {
   LayoutDashboard,
   TrendingUp,
   Gift,
+  ShoppingBag,
   Users,
   CreditCard,
   Settings,
@@ -29,6 +30,7 @@ const DashboardSidebar = ({ isOpen, onClose }: DashboardSidebarProps) => {
   const menuItems = [
     { icon: LayoutDashboard, label: "Overview", path: "/dashboard" },
     { icon: TrendingUp, label: "My Investments", path: "/dashboard/investments" },
+    { icon: ShoppingBag, label: "Buy Plan", path: "/dashboard/investmentplans" },
     { icon: Users, label: "Referrals", path: "/dashboard/referrals" },
     { icon: CreditCard, label: "Withdraw", path: "/dashboard/withdraw" },
     { icon: ShieldCheck, label: "KYC Verification", path: "/dashboard/kyc" },

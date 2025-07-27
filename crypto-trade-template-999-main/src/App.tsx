@@ -25,6 +25,7 @@ import AdminUsers from "./pages/admin/AdminUsers";
 import UserReviews from "./pages/admin/UserReviews";
 import AdminWithdrawals from "./pages/admin/AdminWithdrawals";
 import AdminChat from "./pages/admin/AdminChat";
+import InvestmentPlans from './components/landing/InvestmentPlans';
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ const App = () => (
             <Route path="/dashboard" element={<Dashboard />}>
               <Route index element={<DashboardOverview />} />
               <Route path="investments" element={<Investments />} />
+              <Route path="investmentplans" element={<InvestmentPlans />} />
               <Route path="review" element={<ReviewPage />} />
               <Route path="referrals" element={<Referrals />} />
               <Route path="withdraw" element={<Withdraw />} />
